@@ -10,7 +10,7 @@ import pickle
 
 # 读取四分类数据集分词后的文本数据，将其转换为索引形式并分为训练集和测试集
 
-datapath = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\原始数据\多元情感数据集'
+datapath = r'多元情感数据集'
 emotion_folders = {
     '喜悦': os.listdir(os.path.join(datapath, '喜悦')),
     '愤怒': os.listdir(os.path.join(datapath, '愤怒')),
@@ -75,7 +75,7 @@ print(len(small_word_index))
 print(len(word_index))
 
 # 引入词与词向量的对应字典wv_model，得到索引与词向量的对应字典embedding_matrix
-model_file = r'F:\usefulapp\python\sgns.target.word-ngram.1-2.dynwin5.thr10.neg5.dim300.iter5'
+model_file = r'sgns.target.word-ngram.1-2.dynwin5.thr10.neg5.dim300.iter5'
 print("Loading word2vec model......")
 wv_model = gensim.models.KeyedVectors.load_word2vec_format(model_file, binary=False)
 embedding_matrix = np.random.uniform(size=(vocab_size + 1, 300))  # +1是要留一个给index=0
@@ -105,14 +105,14 @@ print("训练集中各标签数量:", np.bincount(y_train))
 print("测试集中各标签数量:", np.bincount(y_test))
 
 # 要存储的文件路径
-embedding_matrix_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\嵌入矩阵\embedding_matrix.pkl'
-small_word_index_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\索引字典\small_word_index.pkl'
+embedding_matrix_path = r'嵌入矩阵\embedding_matrix.pkl'
+small_word_index_path = r'索引字典\small_word_index.pkl'
 
-train_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\特征数据\训练集\X_train.pkl'
-train_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\特征数据\训练集\y_train.pkl'
+train_path_x = r'特征数据\训练集\X_train.pkl'
+train_path_y = r'特征数据\训练集\y_train.pkl'
 
-test_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\特征数据\测试集\X_test.pkl'
-test_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\升级后成果\特征数据\测试集\y_test.pkl'
+test_path_x = r'特征数据\测试集\X_test.pkl'
+test_path_y = r'特征数据\测试集\y_test.pkl'
 
 # 存储 embedding_matrix 和 small_word_index 到文件
 with open(embedding_matrix_path, 'wb') as f:

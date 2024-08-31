@@ -10,11 +10,11 @@ vocab_size = 20000
 maxlen = 200
 
 # 文件路径
-embedding_matrix_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\嵌入矩阵\embedding_matrix.pkl'
-train_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\训练集\X_train.pkl'
-train_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\训练集\y_train.pkl'
-test_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\测试集\X_test.pkl'
-test_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\测试集\y_test.pkl'
+embedding_matrix_path = r'嵌入矩阵\embedding_matrix.pkl'
+train_path_x = r'特征数据\训练集\X_train.pkl'
+train_path_y = r'特征数据\训练集\y_train.pkl'
+test_path_x = r'特征数据\测试集\X_test.pkl'
+test_path_y = r'特征数据\测试集\y_test.pkl'
 
 # 检查数据文件是否存在，如果存在则加载数据，否则执行数据处理代码
 if os.path.exists(embedding_matrix_path) and os.path.exists(train_path_x) \
@@ -68,5 +68,5 @@ print("Test Loss:", evaluation[0])
 print("Test Accuracy:", evaluation[1])
 
 # 指定保存模型的路径，保存模型
-model_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\训练好的模型\model.h5'
+model_path = r'训练好的模型\model.h5'
 m.save(model_path)

@@ -7,11 +7,11 @@ import pickle
 # 处理原始文本数据为特征形式
 
 # 加载small_word_index
-with open(r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\索引字典\small_word_index.pkl', 'rb') as f:
+with open(r'索引字典\small_word_index.pkl', 'rb') as f:
     small_word_index = pickle.load(f)
 
 # 加载原始文本数据
-predict_data_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\待预测数据\原始数据'
+predict_data_path = r'待预测数据\原始数据'
 predict_files = os.listdir(predict_data_path)
 
 # 读取数据并进行分词处理
@@ -37,7 +37,7 @@ pad_X_predict = pad_sequences(v_X_predict, maxlen=200, padding='post')
 print("Finished!")
 
 # 将处理后的特征数据保存到文件
-predict_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\待预测数据\特征数据\X_predict.pkl'
+predict_path_x = r'待预测数据\特征数据\X_predict.pkl'
 
 with open(predict_path_x, 'wb') as f:
     pickle.dump(pad_X_predict, f)

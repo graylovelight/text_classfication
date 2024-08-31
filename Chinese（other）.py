@@ -4,8 +4,8 @@ import jieba
 # 读取四分类数据集（存储与CSV文件）的文本数据，为其进行分词处理
 
 # 文件路径
-data_file = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\原始数据\多元情感数据集\simplifyweibo_4_moods.csv'
-output_folder = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\原始数据\多元情感数据集'
+data_file = r'多元情感数据集\simplifyweibo_4_moods.csv'
+output_folder = r'多元情感数据集'
 
 # 创建情感类别文件夹
 emotion_folders = {

@@ -10,7 +10,7 @@ import pickle
 
 # 读取分词后的训练集文本数据，将其转换为特征形式并分为训练集和测试集
 
-datapath = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\原始数据\Chinese'
+datapath = r'数据集\原始数据'
 pos_files = os.listdir(datapath+'/pos')
 neg_files = os.listdir(datapath+'/neg')
 
@@ -60,7 +60,7 @@ print(len(small_word_index))
 print(len(word_index))
 
 #引入词与词向量的对应字典wv_model，得到索引与词向量的对应字典embedding_matrix
-model_file = r'F:\usefulapp\python\GoogleNews-vectors-negative300.bin'
+model_file = r'GoogleNews-vectors-negative300.bin'
 print("Loading word2vec model......")
 wv_model = gensim.models.KeyedVectors.load_word2vec_format(model_file,binary=True)
 embedding_matrix = np.random.uniform(size=(vocab_size+1,300)) # +1是要留一个给index=0
@@ -91,14 +91,14 @@ print(list(y_train).count(0))
 
 
 # 要存储的文件路径
-embedding_matrix_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\嵌入矩阵\embedding_matrix.pkl'
-small_word_index_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\索引字典\small_word_index.pkl'
+embedding_matrix_path = r'嵌入矩阵\embedding_matrix.pkl'
+small_word_index_path = r'索引字典\small_word_index.pkl'
 
-train_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\训练集\X_train.pkl'
-train_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\训练集\y_train.pkl'
+train_path_x = r'数据集\特征数据\训练集\X_train.pkl'
+train_path_y = r'数据集\特征数据\训练集\y_train.pkl'
 
-test_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\测试集\X_test.pkl'
-test_path_y = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\特征数据\测试集\y_test.pkl'
+test_path_x = r'数据集\特征数据\测试集\X_test.pkl'
+test_path_y = r'数据集\特征数据\测试集\y_test.pkl'
 
 # 存储 embedding_matrix 和 small_word_index 到文件
 with open(embedding_matrix_path, 'wb') as f:

@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 # 加载模型，导入文本的特征数据，进行文本情感分类
 
 # 指定读取模型的路径
-model_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\训练好的模型\model.h5'
+model_path = r'训练好的模型\model.h5'
 
 # 加载模型
 loaded_model = tf.keras.models.load_model(model_path)
 
 # 加载待预测数据
-predict_path_x = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\待预测数据\特征数据\X_predict.pkl'
+predict_path_x = r'待预测数据\特征数据\X_predict.pkl'
 
 with open(predict_path_x, 'rb') as f:
     X_predict = pickle.load(f)

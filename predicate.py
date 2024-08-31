@@ -21,7 +21,7 @@ pad_X_predict = None
 
 def load_small_word_index():
     global small_word_index
-    with open(r'C:\Users\1\Desktop\电子课本\电子书\创新实践\数据集\索引字典\small_word_index.pkl', 'rb') as f:
+    with open(r'索引字典\small_word_index.pkl', 'rb') as f:
         small_word_index = pickle.load(f)
 
 
@@ -44,7 +44,7 @@ def preprocess_text_files(files):
 def predict_sentiment():
     global pad_X_predict
     # 指定读取模型的路径
-    model_path = r'C:\Users\1\Desktop\电子课本\电子书\创新实践\训练好的模型\model.h5'
+    model_path = r'训练好的模型\model.h5'
 
     # 加载模型
     loaded_model = tf.keras.models.load_model(model_path)
